@@ -4,16 +4,19 @@ public:
     public:    
         char character;
         int count;
-        Pair(char x, int y){
-            character  = x;
-            count = y;
-        }
+        // Pair(char x, int y){
+        //     character  = x;
+        //     count = y;
+        // }
     };
     string removeDuplicates(string s, int k) {
         stack<Pair> st;
         for(int i=0;i<s.length();i++){
             if(st.empty() || st.top().character != s[i]){
-                Pair p(s[i],1);
+                // Pair p(s[i],1);
+                Pair p;
+                p.character = s[i];
+                p.count =1;
                 st.push(p);
             }
             else{
