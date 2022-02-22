@@ -8,22 +8,67 @@
  */
 class Solution {
 public:
+    int length(ListNode* n){
+        int c=0;
+        while(n!=NULL){
+            c++;
+            n=n->next;
+        }
+        return c;
+    }
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-        //Using maps for optimal solution
-        unordered_map<ListNode* , bool> m;
-        //create the map
-        while(headA!=NULL){
-            m[headA] = true;
+        //find the length for both of the lined lists
+        int a = length(headA);
+        int b = length(headB);
+        int dif = abs(a-b);
+        if(b>a) swap(headA, headB);
+        for(int i =0; i<dif;i++){
             headA = headA->next;
         }
-        //now iterate over the next list
-        while(headB!=NULL){
-            if(m.count(headB)){
-                return headB;
+        while(headA!=NULL){
+            if(headA==headB){
+                return headA;
             }
-            headB=headB->next;
+            headA=headA->next;
+            headB = headB->next;
         }
         return NULL;
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //Using maps for little better solution
+        // unordered_map<ListNode* , bool> m;
+        // //create the map
+        // while(headA!=NULL){
+        //     m[headA] = true;
+        //     headA = headA->next;
+        // }
+        // //now iterate over the next list
+        // while(headB!=NULL){
+        //     if(m.count(headB)){
+        //         return headB;
+        //     }
+        //     headB=headB->next;
+        // }
+        // return NULL;
         
         
         
