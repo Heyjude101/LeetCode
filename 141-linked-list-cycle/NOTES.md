@@ -1,1 +1,1 @@
-​
+using maps but to optimize space, we use slow and fast pointers
