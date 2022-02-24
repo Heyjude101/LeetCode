@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool isValid(string s) {
-        map<char , char> mp;
+        unordered_map<char , char> mp;
         mp['}'] = '{';
         mp[']'] = '[';
         mp[')'] = '(';
