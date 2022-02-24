@@ -8,12 +8,11 @@ public:
         stack<char> st;
         for(auto it:s){
             if(it=='[' or it=='(' or it=='{'){
-                cout<<it;
                 st.push(it);
             }
             else{
-                if(!st.empty() && st.top() == mp[it]){
-                    cout<<it;
+                if(st.empty()) return false;
+                else if(st.top() == mp[it]){
                     st.pop();
                 }
                 else{
