@@ -1,10 +1,6 @@
 class Solution {
 public:
     bool isValid(string s) {
-        unordered_map<char , char> mp;
-        mp['}'] = '{';
-        mp[']'] = '[';
-        mp[')'] = '(';
         stack<char> st;
         for(auto it:s){
             if(it=='[' or it=='(' or it=='{'){
@@ -12,7 +8,7 @@ public:
             }
             else{
                 if(st.empty()) return false;
-                else if(st.top() == mp[it]){
+                else if((it== ')' && st.top()=='(') or (it== ']' && st.top()=='[') or (it== '}' && st.top()=='{')){
                     st.pop();
                 }
                 else{
