@@ -9,9 +9,7 @@ public:
                 count++;
                 temp  = temp>>1;  
             }
-            ans.push_back(count);
-            
-            
+            ans.push_back(count);  
         }
         return ans;
         
