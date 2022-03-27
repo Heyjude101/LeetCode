@@ -5,6 +5,8 @@ public:
         vector<int> ans;
         for(int i=0;i<mat.size();i++){
             s.insert({accumulate(mat[i].begin() , mat[i].end(),0) , i});
+            // s.insert({lower_bound(mat[i].begin() , mat[i].end() , 0) - mat[i].begin()-1 , i});
+
         }
         int c =1;
         for(auto it= s.begin(); it!= s.end();it++){
@@ -17,26 +19,6 @@ public:
             }
         }
         return ans;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         
