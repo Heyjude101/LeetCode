@@ -16,10 +16,8 @@ public:
         if(root==NULL){
             return 0;
         }
-        int left = f(root->left);
-        if(left<0) left = 0;
-        int right = f(root->right);
-        if(right<0) right = 0;
+        int left = max(0,f(root->left));
+        int right = max(f(root->right),0);
         maxim = max(left + right + root->val , maxim);
         return root->val + max(left, right); 
     }
