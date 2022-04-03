@@ -15,14 +15,15 @@ public:
         if(root== NULL){
             return;
         }
+        currVec.push_back(root->val);
         if(targetSum==root->val && root->left ==NULL && root->right == NULL){
-            currVec.push_back(root->val);
+            
             ans.push_back(currVec);
             return;
         }
-        currVec.push_back(root->val);
         fun(root->left , targetSum - root->val , ans , currVec);
         fun(root->right , targetSum - root->val , ans , currVec);
+        currVec.pop_back();
     }
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
         vector<vector<int>> ans;
