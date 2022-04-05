@@ -10,6 +10,9 @@
 class Solution {
 public:
     int guessNumber(int n) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
         int i=1;
         int j= n;
         while(i<=j){
