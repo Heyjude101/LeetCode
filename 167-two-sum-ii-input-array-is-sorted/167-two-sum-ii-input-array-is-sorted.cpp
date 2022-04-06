@@ -19,6 +19,6 @@ public:
         return {};
     }
 };
-//fast io
-static bool     _foo = ios::sync_with_stdio(false);
-static ostream* _bar = cin.tie(NULL);
+// //fast io
+// static bool     _foo = ios::sync_with_stdio(false);
+// static ostream* _bar = cin.tie(NULL);
