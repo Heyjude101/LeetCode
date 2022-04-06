@@ -10,6 +10,7 @@ public:
                 continue;
             }
             int target = -1 * nums[i];
+            if(target<0) break;
             int start = i+1;
             int end = size -1; 
             while(start < end){
@@ -32,3 +33,6 @@ public:
         return ans;
     }
 };
+
+static bool     _foo = ios::sync_with_stdio(false);
+static ostream* _bar = cin.tie(NULL);
