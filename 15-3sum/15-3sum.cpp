@@ -4,6 +4,7 @@ public:
         //2 sum modified approach
         vector<vector<int>> ans;
         sort(nums.begin() , nums.end());
+        if(nums.size()>0 && nums[0]>0) return ans;
         int size = nums.size();
         for(int  i =0;i<size-1; i++){
             if(i>0 and nums[i] == nums[i-1]){
