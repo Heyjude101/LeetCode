@@ -1,3 +1,8 @@
+static const int _ = []() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    return 0;
+}();
 class Solution {
 public:
     bool check(int d, int target, vector<int> &arr2){
