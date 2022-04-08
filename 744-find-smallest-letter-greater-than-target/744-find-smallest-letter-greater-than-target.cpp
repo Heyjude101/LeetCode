@@ -1,8 +1,10 @@
 class Solution {
 public:
     char nextGreatestLetter(vector<char>& letters, char target) {
-        vector<char>::iterator it= upper_bound(letters.begin() , letters.end() ,  target);
-        return (it == letters.end())?letters[0]: *it;
+        int size = letters.size();
+        letters.push_back('.');
+        vector<char>::iterator it= upper_bound(letters.begin() , letters.begin()+size ,  target);
+        return (*it == '.')?letters[0]: *it;
         
     }
 };
