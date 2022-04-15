@@ -9,6 +9,21 @@ class Solution {
 public:
     vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
         vector<int> ans;
+        map<int, int> mp;
+        for(auto it: nums1){
+            mp[it]++;
+        }
+        
+        for(auto t: nums2){
+            if(mp[t]>0){
+                mp[t]--;
+                ans.push_back(t);
+            }
+        }
+        
+        return ans;
+        
+       /* vector<int> ans;
         unordered_map<int , int> mp;
         unordered_map<int , int> mp2;
         //map the arrays in frequency
@@ -31,5 +46,6 @@ public:
             
         }
         return ans;
+        */
     }
 };
