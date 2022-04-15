@@ -1,24 +1,21 @@
+auto speedup=[]()
+{
+    std::ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return nullptr;
+}();
 class Solution {
 public:
     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
-        unordered_set<int> s1;
-        unordered_set<int> s2;
-        for(int i=0;i<nums1.size();i++){
-            s1.insert(nums1[i]);
-        }
-        for(int i=0;i<nums2.size();i++){
-            s2.insert(nums2[i]);
-        }
+        unordered_set<int> s1(nums1.begin() , nums1.end());
         vector<int> ans;
-        for(auto it: s1){
-            if(s2.count(it)){
+        for(auto it: nums2){
+            if(s1.count(it)){
                 ans.push_back(it);
+                s1.erase(it);
             }
         }
-        
-        return ans;
-        
-
-        
+        return ans; 
     }
 };
