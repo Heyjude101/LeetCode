@@ -8,7 +8,17 @@ auto speedup=[]()
 class Solution {
 public:
     bool checkIfExist(vector<int>& arr) {
-        //two pass
+        unordered_set<int> s;
+        //one pass approach
+        for(auto it: arr){
+            if(s.count(it*2) or (it%2 == 0 and (s.count(it/2)))){
+                return true;
+            }
+            s.insert(it);
+        }
+        return false;
+        // two pass
+        /*
         unordered_set<int> s;
         int countx = 0;
         //initialize set
@@ -30,6 +40,6 @@ public:
         }
         
         return false;
-        
+        */
     }
 };
