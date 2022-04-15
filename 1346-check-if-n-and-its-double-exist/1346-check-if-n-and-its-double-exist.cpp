@@ -8,6 +8,7 @@ auto speedup=[]()
 class Solution {
 public:
     bool checkIfExist(vector<int>& arr) {
+        //two pass
         unordered_set<int> s;
         int countx = 0;
         //initialize set
