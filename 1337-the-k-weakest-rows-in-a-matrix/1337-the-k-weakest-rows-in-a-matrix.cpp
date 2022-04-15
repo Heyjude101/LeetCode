@@ -1,24 +1,79 @@
 class Solution {
 public:
     vector<int> kWeakestRows(vector<vector<int>>& mat, int k) {
-        set<pair<int,int> > s;
-        vector<int> ans;
+        set<pair<int,int>> s;
         for(int i=0;i<mat.size();i++){
-            s.insert({accumulate(mat[i].begin() , mat[i].end(),0) , i});
-            // s.insert({lower_bound(mat[i].begin() , mat[i].end() , 0) - mat[i].begin()-1 , i});
-
+            s.insert({accumulate(mat[i].begin() , mat[i].end(),0 ), i});
         }
-        int c =1;
-        for(auto it= s.begin(); it!= s.end();it++){
-            if(c<=k){
-                ans.push_back(it->second);
-                c++;
+        vector<int> ans;
+        int kz =0;
+        for(auto it: s){
+            if(kz<k){
+            ans.push_back(it.second);
+            kz++;
             }
             else{
                 break;
             }
         }
+        
         return ans;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//         set<pair<int,int> > s;
+//         vector<int> ans;
+//         for(int i=0;i<mat.size();i++){
+//             s.insert({accumulate(mat[i].begin() , mat[i].end(),0) , i});
+//             // s.insert({lower_bound(mat[i].begin() , mat[i].end() , 0) - mat[i].begin()-1 , i});
+
+//         }
+//         int c =1;
+//         for(auto it= s.begin(); it!= s.end();it++){
+//             if(c<=k){
+//                 ans.push_back(it->second);
+//                 c++;
+//             }
+//             else{
+//                 break;
+//             }
+//         }
+//         return ans;
         
         
         
