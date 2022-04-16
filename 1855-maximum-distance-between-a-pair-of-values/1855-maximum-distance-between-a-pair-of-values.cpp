@@ -14,6 +14,7 @@ public:
         while (i < n1.size() && j < n2.size())
             if (n1[i] > n2[j]){
                 i++;
+                j++;
             }
             else{
                 res = max(res, j - i);
