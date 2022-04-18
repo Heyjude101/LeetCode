@@ -17,10 +17,8 @@ public:
             return;
         }
         inorder(root->left , k);
-        k--;
-        if(k==0) {
+        if(--k==0) {
             ans = root->val;
-            return;
         }
         inorder(root->right , k);   
     }
