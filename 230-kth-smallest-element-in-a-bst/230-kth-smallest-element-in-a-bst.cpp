@@ -12,13 +12,15 @@
 class Solution {
 public:
     int ans =0;
+    bool f = false;
     void inorder(TreeNode* root , int &k){
-        if(root == NULL){
+        if(root == NULL or f == true){
             return;
         }
         inorder(root->left , k);
         if(--k==0) {
             ans = root->val;
+            f = true;
         }
         inorder(root->right , k);   
     }
