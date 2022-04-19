@@ -20,7 +20,7 @@ class Solution {
 public:
     TreeNode *firstNode = NULL;
     TreeNode *secondNode = NULL;
-    TreeNode *prev = new TreeNode(INT_MIN);
+    TreeNode *prev;
     void inorder(TreeNode* root){
         if(root == NULL) return;
         inorder(root->left);
@@ -36,6 +36,7 @@ public:
         
     }
     void recoverTree(TreeNode* root) {
+        prev = new TreeNode(INT_MIN);
         inorder(root);
         swap(firstNode->val , secondNode->val);
     }
