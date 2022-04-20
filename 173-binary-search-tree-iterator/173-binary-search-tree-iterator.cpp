@@ -12,7 +12,7 @@
 class BSTIterator {
 public:
     vector<int> arr;
-    int i;
+    int i=0;
     void inorder(TreeNode* root){
         if(root == NULL) return;
         inorder(root->left);
@@ -21,7 +21,7 @@ public:
     }
     BSTIterator(TreeNode* root) {
         inorder(root);
-        i=0;
+        //pushing back -1 also so that we can know help with the hasNext fuction.
         arr.push_back(-1);
     }
     
