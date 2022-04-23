@@ -1,3 +1,10 @@
+auto speedup=[]()
+{
+    std::ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    return nullptr;
+}();
 class Solution {
 public:
     unordered_map<string , string> mp;
