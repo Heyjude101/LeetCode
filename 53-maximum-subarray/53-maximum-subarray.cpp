@@ -1,18 +1,16 @@
-static const int _ = []() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    return 0;
-}();
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
         int sum = 0;
-        int ans  = nums[0];
-        for(auto i: nums){
-            sum += i;
+        int ans = INT_MIN;
+        
+        for(auto it: nums){
+            sum += it;
             if(sum>ans) ans = sum;
-            if(sum<0) sum =0;
+            if(sum<0) sum = 0;
         }
+        
         return ans;
+        
     }
 };
