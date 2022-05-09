@@ -11,14 +11,11 @@ vector<string> letterCombinations(string digits) {
            return res;
        }
        res.push_back("");
-        
-        
+        //traversing through the digits
         for(int k=0;k<digits.length();k++)
         {
             vector<string> temp;
             string s = v[digits[k] - '0'];   
-
-
             for(int i=0;i<s.length();i++)
             {
                 for(int j=0;j<res.size();j++)
@@ -27,7 +24,6 @@ vector<string> letterCombinations(string digits) {
                 }
             }
                swap(temp,res);
-           
        }
          
     return res;
