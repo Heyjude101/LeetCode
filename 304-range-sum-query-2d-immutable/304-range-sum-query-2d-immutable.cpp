@@ -10,7 +10,6 @@ public:
                 temp.push_back(summ);
             }
             myMat.push_back(temp);
-            temp.clear();
         }
     }
     
