@@ -2,14 +2,13 @@ class NumMatrix {
 public:
     vector<vector<int>> myMat;
     NumMatrix(vector<vector<int>>& matrix) {
-        for(auto it: matrix){
+        myMat = vector<vector<int>>(matrix.size() , vector<int>(matrix[0].size()));
+        for(int i=0;i<matrix.size();i++){
             int summ = 0;
-            vector<int> temp;
-            for(auto q: it){
-                summ += q;
-                temp.push_back(summ);
+            for(int j=0;j<matrix[0].size();j++){
+                summ += matrix[i][j];
+                myMat[i][j] = summ;
             }
-            myMat.push_back(temp);
         }
     }
     
