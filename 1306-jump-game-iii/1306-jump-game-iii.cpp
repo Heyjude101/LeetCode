@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool dp[500000];
-    map<int,int>visit;
+    unordered_map<int,int>visit;
     bool solve(vector<int> &arr , int start){
         //base case
         //check for condition meeting errors
