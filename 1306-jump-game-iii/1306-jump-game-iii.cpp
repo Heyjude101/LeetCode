@@ -17,9 +17,9 @@ public:
             return true;
         }
         
-        // if(dp[start] != false){
-        //     return dp[start];
-        // }
+        if(dp[start] != false){
+            return dp[start];
+        }
         visit[start]++;
         //main case
         bool checkFront = solve(arr , start + arr[start]);
@@ -39,7 +39,7 @@ public:
         if(flag == false){
             return false;
         }
-        // memset(dp , false , sizeof(dp));
+        memset(dp , false , sizeof(dp));
         return solve(arr , start);
         
     }
