@@ -7,11 +7,8 @@ public:
             if(prices[i] < miniP){
                 miniP = prices[i];
             }
-            if(maxi < (prices[i] - miniP)){
-                maxi = prices[i] - miniP;
-            }
+            maxi = max(maxi , prices[i] - miniP);
         }
-        
         return maxi; 
     }
 };
