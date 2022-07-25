@@ -1,0 +1,1 @@
+If preorder traversal is sorted, then it means the tree is BST
