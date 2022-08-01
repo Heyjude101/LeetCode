@@ -1,29 +1,24 @@
 class Solution {
 public:
-    int dp[200][200];
-    int solve(int i , int j , int m , int n){
-         //base case
-        if(i > m){
+    int arr[105][105];
+    int solve(int m , int  n){
+        //base case
+        if(m < 0 or n< 0){
             return 0;
         }
-        if(j > n){
-            return 0;
-        }
-        if(i == m && j == n){
+        if(m ==0 && n ==0){
             return 1;
         }
-        if(dp[i][j] != -1){
-            return dp[i][j];
+        if(arr[m][n] != -1){
+            return arr[m][n];
         }
-        int right = solve(i , j+1 , m , n);
-        int down = solve(i+1 , j , m , n);
-        
-        return dp[i][j] = (right + down);
+        int right = solve(m , n-1);
+        int bottom = solve(m- 1 , n);
+        return arr[m][n] = (right + bottom); 
     }
     int uniquePaths(int m, int n) {
-        memset(dp , -1 , sizeof(dp));
-       return solve(0 , 0, m-1 , n-1);
+        memset(arr , -1 , sizeof(arr));
+        return solve(m-1 , n-1);
         
-        
-    }
+    } 
 };
