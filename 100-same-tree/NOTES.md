@@ -1,1 +1,1 @@
-​
+trust the recursion.....like if check if left is same, then check right and then val....then return true....and add the base cases for recursion
