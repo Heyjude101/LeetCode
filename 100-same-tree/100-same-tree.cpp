@@ -12,16 +12,16 @@
 class Solution {
 public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
-        //here we check for structure mostly
-        if(p == NULL && q!=NULL) return false;
-        if(p != NULL && q==NULL) return false;
-        if(p==NULL && q==NULL) return true;
-        //isSameTree is a function that returns whether the two trees gives to it are identical or not!
-       if(isSameTree(p->left , q->left) && isSameTree(p->right , q->right) && p->val == q->val){
-           return true;
-       }
+        //base case
+        if(p == NULL && q==NULL) return true;
+        if(p == NULL && q!= NULL) return false;
+        if(p != NULL && q== NULL) return false;
+        if(isSameTree(p->left , q->left) && isSameTree(p->right , q->right) && p->val== q->val){
+            return true;
+        }
         else{
             return false;
         }
+        
     }
 };
