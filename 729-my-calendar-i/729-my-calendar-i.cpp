@@ -13,8 +13,6 @@ public:
             return true;
         }
         bool ret = true;
-        // bool ret2 = true;
-        //check the start
         for(auto it: mp){
             if(start >= it.second or end <= it.first){
                 
@@ -27,7 +25,6 @@ public:
         if(ret){
             mp[start] = end;
         }
-        
         return ret;  
     }
 };
