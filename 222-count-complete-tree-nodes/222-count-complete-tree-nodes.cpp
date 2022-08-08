@@ -17,11 +17,9 @@ public:
         if(root==NULL){
            return 0;
         }
-        // else{
-        //     i++;
-        // }
-        // int leftc = countNodes(left);
-        // int rightc = countNodes(right);
-        return 1 + countNodes(root->left) + countNodes(root->right);  
+        int leftc = countNodes(root->left);
+        int rightc = countNodes(root->right);
+        return 1 + leftc + rightc;
+        // return 1 + countNodes(root->left) + countNodes(root->right);  
     }
 };
