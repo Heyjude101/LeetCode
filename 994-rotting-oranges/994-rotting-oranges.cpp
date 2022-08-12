@@ -37,15 +37,14 @@ public:
             //yahi pe time max bhi nikal lo...nice jugaad
             maxTime = max(maxTime , temp.time);
             //if left possible, then push it
-            if((temp.x- 1) >=0 and temp.y >= 0 and temp.y < grid[0].size() and temp.x < grid.size() and grid[temp.x -1][temp.y] == 1 and !vis[temp.x -1][temp.y]){
+            if((temp.x - 1) >=0 and temp.x < grid.size() and grid[temp.x -1][temp.y] == 1 and !vis[temp.x -1][temp.y]){
                 q.push({temp.x -1 , temp.y , temp.time +1});
                 //mark visited also here
- 
                 vis[temp.x-1][temp.y] = true;
                 grid[temp.x-1][temp.y] = 2;
             }
             //if right possible, then push it
-             if((temp.x ) >=0 and temp.y >= 0 and temp.y < grid[0].size() and temp.x+1 < grid.size() and grid[temp.x+1][temp.y] == 1 and !vis[temp.x+1][temp.y]){
+             if((temp.x +1 ) >=0 and temp.x+1 < grid.size() and grid[temp.x+1][temp.y] == 1 and !vis[temp.x+1][temp.y]){
                 q.push({temp.x +1 , temp.y , temp.time +1});
                 //mark visited also here
                 vis[temp.x+1][temp.y] = true;
@@ -53,7 +52,7 @@ public:
 
             }
               //if up possible, then push it
-             if(temp.x >=0 and (temp.y-1) >= 0 and temp.y < grid[0].size() and temp.x < grid.size() and grid[temp.x][temp.y-1] == 1 and !vis[temp.x][temp.y-1]){
+             if((temp.y-1) >= 0 and temp.y < grid[0].size() and grid[temp.x][temp.y-1] == 1 and !vis[temp.x][temp.y-1]){
                 q.push({temp.x , temp.y-1 , temp.time +1});
                 //mark visited also here
                 vis[temp.x][temp.y-1] = true;
@@ -61,7 +60,7 @@ public:
 
             }
               //if down possible, then push it
-             if(temp.x >=0 and (temp.y) >= 0 and temp.y+1 < grid[0].size() and temp.x < grid.size() and grid[temp.x][temp.y+1] == 1 and !vis[temp.x][temp.y+1]){
+             if((temp.y) >= 0 and temp.y+1 < grid[0].size() and grid[temp.x][temp.y+1] == 1 and !vis[temp.x][temp.y+1]){
                 q.push({temp.x , temp.y+1 , temp.time +1});
                 //mark visited also here
                 vis[temp.x][temp.y+1] = true;
