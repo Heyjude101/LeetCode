@@ -11,10 +11,10 @@ public:
                 continue;
             }
             int target = -1 * nums[i];
-            if(target<0) return ans;
+            // if(target<0) return ans;
             if(nums[i] > 0) return ans;
             int start = i+1;
-            int end = size -1; 
+            int end = size -1;  
             while(start < end){
                 int curSum = nums[start] + nums[end];
                 if(curSum < target){
