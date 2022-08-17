@@ -52,12 +52,6 @@ public:
                 }
             }
         }
-        for(auto it: newMatrix){
-            for(auto ite: it){
-                cout<<ite<<" ";
-            }
-            cout<<"\n";
-        }
         vector<bool> vis(n*n + 1 , false);
         queue<packet> q;
         q.push({1 , 0});
@@ -70,7 +64,6 @@ public:
             }
             for(int i=1;i<=6;i++){
                 int new_pos = mp[temp.num + i];
-               
                 if(!vis[new_pos]){
                     vis[new_pos] = true;
                     // cout<<new_pos<<" "<<temp.moves + 1<<"\n";
