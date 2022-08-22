@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int dp[205][205];
+    int dp[201][201];
     int helper(vector<vector<int>> &grid , int i  , int j){
         //base cases
         //out of bound case
