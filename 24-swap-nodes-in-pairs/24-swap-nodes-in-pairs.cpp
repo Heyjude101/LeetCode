@@ -52,17 +52,17 @@ public:
         }
         
         //check if the values are right
-        cout<<"ODD values:"<<"\n";
-        for(auto it: odd){
-            cout<<it->val<<" ";
-            // odd = it->next;
-        }
-        cout<<"\n";
-        cout<<"EVEN values:"<<"\n";
-        for(auto it: even){
-            cout<<it->val<<" ";
-            // it = it->next;
-        }
+        // cout<<"ODD values:"<<"\n";
+        // for(auto it: odd){
+        //     cout<<it->val<<" ";
+        //     // odd = it->next;
+        // }
+        // cout<<"\n";
+        // cout<<"EVEN values:"<<"\n";
+        // for(auto it: even){
+        //     cout<<it->val<<" ";
+        //     // it = it->next;
+        // }
         
         ListNode* ans = new ListNode(0);
         // ans = ans->next;
