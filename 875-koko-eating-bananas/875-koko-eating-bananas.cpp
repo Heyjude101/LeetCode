@@ -1,7 +1,7 @@
 class Solution {
 public:
-    bool check(int m,vector<int> &piles,int h){
-        int hrs=0;
+    bool check(vector<int> &piles,int h , int m){
+          long long hrs=0;
         for(auto it:piles){
             int d = it/m;
             hrs +=d;
@@ -11,25 +11,23 @@ public:
         if(hrs<=h) return true;
         return false;
         }
-    
-    
-    
-    
-    
-public:
     int minEatingSpeed(vector<int>& piles, int h) {
-        int left=1;
-        int right = *max_element(piles.begin() , piles.end());
-        while(left<=right){
-            int mid = (left + right)/2;
-            if(check(mid , piles , h)){
-                right = mid-1;
+        
+        long long minK =  1;
+        long long maxK = *max_element(piles.begin() , piles.end());
+        // int maxK = 10000000;
+        long long midK;
+        while(minK <= maxK){
+            midK  = (minK) + (maxK-minK)/2;
+            if(check(piles , h , midK)){
+                maxK = midK-1;
             }
             else{
-                left = mid+1;
+                minK = midK+1;
             }
             
         }
-        return left; 
+        
+        return minK;
     }
 };
